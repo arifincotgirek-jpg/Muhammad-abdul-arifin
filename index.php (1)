@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Kalkulator Coding</h1>
+
+    <form action="" method="post">
+        Angka 1 <input type="text" name="angka1"> <br>
+        Angka 2 <input type="text" name="angka2"> <br>
+        Operator <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+            <option value="/">/</option>
+        </select>
+        <button type="submit" name="eksekusi">Eksekusi</button>
+    </form>
+
+    <?php
+        if(isset($_POST['eksekusi'])) {
+            $angka1 = $_POST['angka1'];
+            $angka2 = $_POST['angka2'];
+            $operator = $_POST['operator'];
+
+            //penjumlahan
+            if ($operator == "+") {
+                $hasil = $angka1 + $angka2;
+            }
+
+            //pengurangan
+            else if ($operator == "-") {
+                $hasil = $angka1 - $angka2;
+            }
+
+            //perkalian
+            else if ($operator == "x") {
+                $hasil = $angka1 * $angka2;
+            }
+
+            //pembagian
+            else if ($operator == "/") {
+                $hasil = $angka1 / $angka2;
+            }
+
+            echo "<br>";
+            echo "$angka1 $operator $angka2 <br>";
+            echo "= $hasil";
+        }  
+    ?>
+    
+</body>
+</html>
